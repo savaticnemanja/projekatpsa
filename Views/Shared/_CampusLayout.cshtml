@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/forms.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div class="brand">
+                <span class="brand-mark">AST</span>
+                <div class="brand-text">
+                    <div class="brand-title">Akademija Savremene Tehnologije</div>
+                    <div class="brand-subtitle">Upis 2025</div>
+                </div>
+            </div>
+            <nav class="nav">
+                @Html.ActionLink("Pocetna", "Index", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("Programi", "Programi", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("Forma upis", "FormaUpis", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("O nama", "Onama", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("Kontakt", "Kontakt", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("Baza", "Baza", "Home", null, new { @class = "nav-link" })
+            </nav>
+        </header>
+        <main class="content">
+            @RenderBody()
+        </main>
+        <footer class="footer">
+            <div>Akademija Savremene Tehnologije, Novi Sad</div>
+            <div>info@ast.rs | 021 555 010</div>
+        </footer>
+    </div>
+</body>
+</html>

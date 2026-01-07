@@ -1,0 +1,32 @@
+@model IEnumerable<ProjekatPsa.Models.PrijavaUpis>
+@{
+    ViewBag.Title = "Baza";
+}
+
+@Html.SectionTitle("Prijave u bazi")
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kandidat</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Program</th>
+            <th>Datum prijave</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Kandidat.Ime @p.Kandidat.Prezime</td>
+            <td>@p.Kandidat.Email</td>
+            <td>@p.Kandidat.Telefon</td>
+            <td>@p.StudijskiProgramId</td>
+            <td>@p.DatumPrijave.ToString("dd.MM.yyyy")</td>
+        </tr>
+    }
+    </tbody>
+</table>

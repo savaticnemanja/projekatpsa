@@ -1,0 +1,58 @@
+@model ProjekatPsa.Models.PrijavaUpis
+@{
+    ViewBag.Title = "Forma upis";
+}
+
+@Html.SectionTitle("Forma za prijavu")
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Proverite polja.", new { @class = "validation" })
+
+    <div class="form-grid">
+        <div class="form-field">
+            <label>Ime</label>
+            @Html.TextBoxFor(m => m.Kandidat.Ime, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Kandidat.Ime, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>Prezime</label>
+            @Html.TextBoxFor(m => m.Kandidat.Prezime, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Kandidat.Prezime, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>Email</label>
+            @Html.TextBoxFor(m => m.Kandidat.Email, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Kandidat.Email, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>Telefon</label>
+            @Html.TextBoxFor(m => m.Kandidat.Telefon, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Kandidat.Telefon, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>Datum rodjenja</label>
+            @Html.TextBoxFor(m => m.Kandidat.DatumRodjenja, "{0:yyyy-MM-dd}", new { @class = "input", type = "date" })
+            @Html.ValidationMessageFor(m => m.Kandidat.DatumRodjenja, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>JMBG</label>
+            @Html.TextBoxFor(m => m.Kandidat.Jmbg, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Kandidat.Jmbg, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field">
+            <label>Studijski program</label>
+            @Html.DropDownListFor(m => m.StudijskiProgramId, new SelectList(ViewBag.Programi, "Id", "Naziv"), "Izaberi program", new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.StudijskiProgramId, null, new { @class = "field-error" })
+        </div>
+        <div class="form-field full">
+            <label>Napomena</label>
+            @Html.TextAreaFor(m => m.Napomena, 4, 40, new { @class = "input" })
+            @Html.ValidationMessageFor(m => m.Napomena, null, new { @class = "field-error" })
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn primary">Posalji prijavu</button>
+    </div>
+}

@@ -1,0 +1,39 @@
+@{
+    ViewBag.Title = "Akademija Savremene Tehnologije";
+    ViewBag.Description = "Programi iz oblasti softverskog inzenjeringa i informacionih sistema";
+    ViewBag.Keywords = "studije, upis, softver, programi";
+}
+
+<div class="hero-card">
+    <div class="hero-text">
+        @Html.SectionTitle("Upis na programe 2025")
+        <p>Praksa, timski rad i realni projekti iz industrije. Nastava je fokusirana na primenu znanja kroz rad u manjim grupama.</p>
+        <div class="cta-row">
+            @Html.ActionLink("Prijavi se", "FormaUpis", "Home", null, new { @class = "btn primary" })
+            @Html.ActionLink("Pogledaj programe", "Programi", "Home", null, new { @class = "btn ghost" })
+        </div>
+    </div>
+    <div class="hero-panel">
+        <div class="panel-title">Zasto AST</div>
+        <ul class="panel-list">
+            <li>Mentorski rad i razvoj portfolija</li>
+            <li>Partnerstva sa lokalnim IT kompanijama</li>
+            <li>Modularni pristup i mogucnost prakse</li>
+        </ul>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <div class="card-title">Softverski inzenjering</div>
+        <div class="card-text">Full stack razvoj, testiranje i rad sa cloud servisima.</div>
+    </div>
+    <div class="card">
+        <div class="card-title">Informacioni sistemi</div>
+        <div class="card-text">Analiza, baze podataka i upravljanje sistemima.</div>
+    </div>
+    <div class="card">
+        <div class="card-title">UX i produkt dizajn</div>
+        <div class="card-text">Istrazivanje korisnika, prototipovanje i dizajn procesa.</div>
+    </div>
+</div>

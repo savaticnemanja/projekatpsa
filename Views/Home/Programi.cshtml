@@ -1,0 +1,17 @@
+@model IEnumerable<ProjekatPsa.Models.StudijskiProgram>
+@{
+    ViewBag.Title = "Programi";
+}
+
+@Html.SectionTitle("Studijski programi")
+
+<div class="grid">
+@foreach (var program in Model)
+{
+    <div class="card">
+        <div class="card-title">@program.Naziv</div>
+        <div class="card-text">@program.Opis</div>
+        <div class="card-text">Trajanje: @program.TrajanjeSemestara semestara</div>
+    </div>
+}
+</div>

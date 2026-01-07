@@ -1,0 +1,19 @@
+@model ProjekatPsa.Models.PrijavaUpis
+@{
+    ViewBag.Title = "Potvrda";
+}
+
+@Html.SectionTitle("Prijava je uspesno sacuvana")
+
+<div class="card">
+    <div class="card-title">Podaci kandidata</div>
+    <div class="card-text">@Model.Kandidat.Ime @Model.Kandidat.Prezime</div>
+    <div class="card-text">@Model.Kandidat.Email</div>
+    <div class="card-text">@Model.Kandidat.Telefon</div>
+</div>
+
+<div class="card">
+    <div class="card-title">Izabrani program</div>
+    <div class="card-text">Program ID: @Model.StudijskiProgramId</div>
+    <div class="card-text">Datum prijave: @Model.DatumPrijave.ToString("dd.MM.yyyy")</div>
+</div>
